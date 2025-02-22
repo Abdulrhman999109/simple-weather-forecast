@@ -1,12 +1,13 @@
 'use client'
 import { useState, useEffect } from "react";
+import { WeatherData, ForecastData } from "../app/types";
 import SearchBar from "../components/SearchBar";
 import WeatherCard from "../components/WeatherCard";
 import { fetchWeather, fetchForecast } from "../utils/fetchWeather";
 
 const Home = () => {
-  const [weatherData, setWeatherData] = useState<any>(null);
-  const [forecastData, setForecastData] = useState<any>(null);
+  const [weatherData, setWeatherData] = useState<WeatherData | null>(null);
+  const [forecastData, setForecastData] = useState<ForecastData | null>(null);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
   useEffect(() => {
